@@ -17,10 +17,6 @@ function Job({ job, index }: { job: ExperienceItem; index: number }) {
       style={{ "--reveal-delay": `${index * 70}ms` } as CSSProperties}
       className="reveal relative ml-6 pb-12 last:pb-0 md:ml-8"
     >
-      <span
-        className="absolute top-1.5 left-[1.7rem] size-3 rounded-full border-2 border-accent bg-background md:left-[2.2rem]"
-        aria-hidden="true"
-      />
       <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
         <h3 className="font-heading text-xl font-bold tracking-tight">
           {job.company}
