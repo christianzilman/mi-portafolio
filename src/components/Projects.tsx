@@ -13,10 +13,9 @@ export function Projects() {
       tone="light"
       intro={
         <p className="leading-relaxed text-muted text-pretty">
-          Una selección de desarrollos independientes. Son proyectos
-          privados/comerciales, por lo que se presentan por contexto,
-          contribución y arquitectura. Entrá a cada caso para ver el detalle
-          completo.
+          Una selección de desarrollos independientes documentados en el CV,
+          presentados por contexto, contribución, tecnologías y capturas reales.
+          Entrá a cada caso para ver el detalle completo.
         </p>
       }
     >
@@ -33,9 +32,9 @@ export function Projects() {
                 >
                   <img
                     src={project.image || "/placeholder.svg"}
-                    alt={`Visual conceptual del proyecto ${project.title}`}
+                    alt={project.imageAlt}
                     loading="lazy"
-                    className="aspect-video w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.04]"
+                    className="aspect-video w-full bg-white object-contain p-2 transition-transform duration-500 ease-out group-hover:scale-[1.02]"
                   />
                 </Link>
 

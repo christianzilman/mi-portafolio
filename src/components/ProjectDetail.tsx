@@ -72,24 +72,52 @@ export function ProjectDetail({ project }: { project: ProjectCase }) {
           ) : (
             <p className="mt-8 inline-flex items-center gap-2 rounded-full border border-dashed border-border px-4 py-2 text-sm text-muted">
               <Lock className="size-3.5" aria-hidden="true" />
-              Proyecto privado / comercial — sin repositorio público
+              Proyecto independiente
             </p>
           )}
         </div>
       </header>
 
-      {/* Imagen conceptual */}
+      {/* Captura principal */}
       <div className="bg-ink">
         <div className="mx-auto max-w-5xl px-6 py-10 md:py-14">
-          <div className="overflow-hidden rounded-2xl border border-ink-border">
+          <div className="overflow-hidden rounded-2xl border border-ink-border bg-white">
             <img
               src={project.image || "/placeholder.svg"}
-              alt={`Visual conceptual del proyecto ${project.title}`}
-              className="aspect-video w-full object-cover"
+              alt={project.imageAlt}
+              className="max-h-[44rem] w-full object-contain p-2"
             />
           </div>
         </div>
       </div>
+
+      {project.gallery?.length ? (
+        <section className="border-b border-border bg-background">
+          <div className="mx-auto max-w-5xl px-6 py-14 md:py-20">
+            <p className="kicker text-accent">Capturas del sistema</p>
+            <div className="mt-8 grid gap-6 md:grid-cols-2">
+              {project.gallery.map((image) => (
+                <figure
+                  key={image.src}
+                  className="overflow-hidden rounded-2xl border border-border bg-surface"
+                >
+                  <div className="flex min-h-64 items-center bg-white p-2">
+                    <img
+                      src={image.src}
+                      alt={image.alt}
+                      loading="lazy"
+                      className="max-h-[32rem] w-full object-contain"
+                    />
+                  </div>
+                  <figcaption className="border-t border-border px-4 py-3 text-sm text-muted">
+                    {image.alt}
+                  </figcaption>
+                </figure>
+              ))}
+            </div>
+          </div>
+        </section>
+      ) : null}
 
       {/* 01 · El desafío */}
       <section className="bg-background">

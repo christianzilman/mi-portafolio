@@ -1,214 +1,256 @@
+import {
+  fotocabinaImages,
+  gestionExpedientesImages,
+  gestionFinancieraImages,
+  multimedia360Images,
+  saindexImages,
+} from "@/assets";
 import type { ProjectCase } from "./types";
 
-// Casos basados en proyectos independientes (freelance) del CV.
-// Son proyectos privados/comerciales: se presentan por contexto, problema,
-// contribución y arquitectura, sin código ni enlace a repositorio.
+// Casos basados exclusivamente en la sección de proyectos independientes del CV.
+// Las capturas se importan desde src/assets para que Vite resuelva sus rutas.
 export const projects: ProjectCase[] = [
   {
     slug: "multimedia-360",
     title: "Software de Procesamiento Multimedia 360",
     category: "Software de escritorio · .NET 8 / WPF",
-    role: "Desarrollo integral (desktop)",
-    modality: "Freelance · Comercial",
-    client: "Confidencial",
+    role: "Desarrollo de aplicación de escritorio",
+    modality: "Proyecto independiente · Comercial",
+    client: "No especificado",
     summary:
-      "Aplicación de escritorio comercial para renderizar video 360 pesado sin bloquear la captura durante el evento.",
-    image: "/images/projects/multimedia-360.png",
+      "Aplicación de escritorio comercial para eventos, con procesamiento asíncrono y renderizado de video 360.",
+    image: multimedia360Images.cover,
+    imageAlt: "Pantalla principal del software de procesamiento multimedia 360",
     context:
-      "Producto comercial para eventos donde se captura y procesa video 360 en simultáneo. El renderizado es intensivo y no puede frenar la aplicación mientras el operador sigue capturando material en vivo.",
+      "Aplicación comercial de escritorio desarrollada para procesar contenido multimedia 360 en eventos.",
     problem:
-      "Eventos que requerían renderizado de video pesado sin bloquear la aplicación de escritorio durante la captura.",
+      "Procesar y renderizar video 360 dentro de una aplicación de escritorio para eventos.",
     contribution:
-      "Desarrollé una aplicación de escritorio comercial en .NET 8 (WPF) con procesamiento asíncrono para el renderizado de video mediante Xabe.FFmpeg, persistiendo con Entity Framework.",
+      "Desarrollé la aplicación en .NET 8 con WPF e implementé procesamiento asíncrono para el renderizado de video mediante Xabe.FFmpeg, con persistencia local utilizando Entity Framework y SQLite.",
     architecture: [
       {
-        title: "UI desacoplada (WPF)",
-        description:
-          "Interfaz de captura y control construida en WPF, separada del pipeline de render para mantener la aplicación fluida durante el evento.",
+        title: "Aplicación de escritorio",
+        description: "Aplicación para Windows desarrollada con .NET 8 y WPF.",
       },
       {
-        title: "Render asíncrono",
+        title: "Procesamiento asíncrono",
         description:
-          "Procesamiento de video con Xabe.FFmpeg ejecutado de forma asíncrona, evitando el bloqueo del hilo de UI en tareas pesadas.",
+          "Ejecución asíncrona del procesamiento requerido para el renderizado de video.",
       },
       {
-        title: "Persistencia con EF",
-        description:
-          "Gestión de trabajos y estados de render con Entity Framework sobre PostgreSQL.",
+        title: "Renderizado multimedia",
+        description: "Renderizado de video implementado con Xabe.FFmpeg.",
       },
       {
-        title: "Pipeline de medios 360",
+        title: "Persistencia",
         description:
-          "Orquestación de las etapas de importación, transformación y exportación del material 360.",
+          "Persistencia local con Entity Framework y SQLite.",
       },
     ],
     result:
-      "Producto comercial entregado y utilizado en eventos, con render de video 360 en segundo plano sin interrumpir la captura.",
-    tech: [".NET 8", "WPF", "Xabe.FFmpeg", "Entity Framework", "PostgreSQL"],
-    isPrivate: true,
+      "Aplicación comercial de escritorio desarrollada para el procesamiento multimedia 360 en eventos.",
+    tech: [".NET 8", "WPF", "Xabe.FFmpeg", "Entity Framework", "SQLite"],
   },
   {
     slug: "gestion-expedientes",
     title: "Sistema Integral de Gestión de Expedientes",
     category: "Software de escritorio · .NET 8 / WinForms",
-    role: "Desarrollo integral (desktop)",
-    modality: "Freelance · Comercial",
+    role: "Desarrollo de aplicación de escritorio",
+    modality: "Proyecto independiente · Comercial",
     client: "Sector institucional / gubernamental",
     summary:
-      "Aplicación de escritorio para la trazabilidad y administración de documentación institucional a lo largo de todo el ciclo del trámite.",
-    image: "/images/projects/gestion-expedientes.png",
+      "Aplicación comercial de escritorio para la trazabilidad y administración de documentación institucional y gubernamental.",
+    image: gestionExpedientesImages.cover,
+    imageAlt: "Menú principal del Sistema Integral de Gestión de Expedientes",
+    gallery: [
+      {
+        src: gestionExpedientesImages.gallery[0],
+        alt: "Pantalla de registro de expedientes",
+      },
+      {
+        src: gestionExpedientesImages.gallery[1],
+        alt: "Pantalla de búsqueda y modificación de expedientes",
+      },
+      {
+        src: gestionExpedientesImages.gallery[2],
+        alt: "Pantalla de acceso al Sistema Integral de Gestión de Expedientes",
+      },
+    ],
     context:
-      "Organismo con alto volumen de expedientes que necesitaba trazabilidad completa del trámite, control por usuarios y roles, y visibilidad estadística de la operación.",
+      "Sistema orientado a la trazabilidad y administración del ciclo de vida de documentación institucional y gubernamental.",
     problem:
-      "Trazabilidad y administración de documentación institucional/gubernamental a lo largo de todo el ciclo de vida del trámite.",
+      "Gestionar el trámite desde su ingreso y curso hasta su reserva o archivo, con control de usuarios y roles.",
     contribution:
-      "Construí una aplicación de escritorio en .NET 8 (WinForms) con paneles estadísticos, gestión del ciclo del trámite (ingreso, en curso, reserva, archivo), administración de dependencias de origen y un módulo de RR.HH., todo bajo control de usuarios y roles.",
+      "Desarrollé la aplicación en .NET 8 con WinForms e implementé paneles estadísticos, la gestión del ciclo de vida del trámite, la administración de dependencias de origen y un módulo de recursos humanos para parametrizar el personal.",
     architecture: [
       {
-        title: "Ciclo del trámite",
+        title: "Ciclo de vida del trámite",
         description:
-          "Gestión de estados del expediente —ingreso, en curso, reserva y archivo— con trazabilidad de cada movimiento.",
+          "Gestión de los estados de ingreso, en curso, reserva y archivo.",
       },
       {
         title: "Paneles estadísticos",
-        description:
-          "Tableros con métricas de la operación para seguimiento y toma de decisiones.",
+        description: "Paneles para consultar información estadística del sistema.",
       },
       {
         title: "Usuarios y roles",
-        description:
-          "Control de acceso por roles sobre todos los módulos del sistema.",
+        description: "Control del acceso al sistema mediante usuarios y roles.",
       },
       {
-        title: "Módulos de gestión",
+        title: "Dependencias y recursos humanos",
         description:
-          "Administración de dependencias de origen y módulo de RR.HH. integrados.",
+          "Administración de dependencias de origen y parametrización del personal, incluidos nombramientos, planta permanente y capacidades especiales.",
       },
     ],
     result:
-      "Sistema en uso para administrar el ciclo de vida documental con control de acceso y reportería estadística.",
-    tech: [".NET 8", "WinForms", "Entity Framework", "SQL Server"],
-    isPrivate: true,
+      "Aplicación comercial de escritorio desarrollada para administrar y dar trazabilidad al ciclo de vida documental.",
+    tech: [".NET 8", "WinForms"],
   },
   {
     slug: "plataforma-financiera",
     title: "Plataforma de Gestión Financiera",
-    category: "Aplicación web · Java / Spring",
-    role: "Desarrollo integral",
-    modality: "Freelance · Comercial",
-    client: "Confidencial",
+    category: "Software de escritorio · Java / Spring",
+    role: "Construcción e implementación integral",
+    modality: "Proyecto independiente · Comercial",
+    client: "No especificado",
     summary:
-      "Sistema en producción para la administración de préstamos, con motor de cobros, alertas automatizadas y reportería.",
-    image: "/images/projects/plataforma-financiera.png",
+      "Sistema de escritorio en producción para la administración operativa de préstamos, con motor de cobros, alertas automatizadas y reportería.",
+    image: gestionFinancieraImages.cover,
+    imageAlt: "Menú principal de la Plataforma de Gestión Financiera",
+    gallery: [
+      { src: gestionFinancieraImages.gallery[0], alt: "Pantalla de gestión de clientes" },
+      { src: gestionFinancieraImages.gallery[1], alt: "Pantalla de carga de créditos" },
+      { src: gestionFinancieraImages.gallery[2], alt: "Pantalla de ingreso de recibos" },
+      { src: gestionFinancieraImages.gallery[3], alt: "Pantalla de liquidación" },
+      { src: gestionFinancieraImages.gallery[4], alt: "Pantalla de consulta de ingresos" },
+      { src: gestionFinancieraImages.gallery[5], alt: "Pantalla de verificación de recibos" },
+      { src: gestionFinancieraImages.gallery[6], alt: "Pantalla de control de créditos" },
+      { src: gestionFinancieraImages.gallery[7], alt: "Pantalla de control de ventas" },
+      { src: gestionFinancieraImages.gallery[8], alt: "Pantalla de consulta de pagos parciales e impagos" },
+      { src: gestionFinancieraImages.gallery[9], alt: "Pantalla de informe mensual" },
+      { src: gestionFinancieraImages.gallery[10], alt: "Pantalla de control de atrasos" },
+    ],
     context:
-      "Operatoria de préstamos con distintas frecuencias (diarios, semanales, mensuales) que requería seguimiento de cobros, alertas y reportes confiables.",
+      "Sistema integral para administrar la operación de préstamos diarios, semanales y mensuales.",
     problem:
-      "Administración operativa de préstamos (diarios, semanales, mensuales) con seguimiento de cobros y alertas.",
+      "Gestionar préstamos y cobros con alertas automatizadas e información operativa mediante reportes.",
     contribution:
-      "Construí e implementé un sistema integral, actualmente en producción, con motor de cobros y alertas automatizadas, y reportería con JasperReports.",
+      "Construí e implementé el sistema de escritorio con Maven, Java, Spring e Hibernate, PostgreSQL y JasperReports.",
     architecture: [
       {
-        title: "Motor de cobros",
+        title: "Gestión de préstamos",
         description:
-          "Cálculo y seguimiento de cobros para préstamos diarios, semanales y mensuales.",
+          "Administración operativa de préstamos diarios, semanales y mensuales.",
+      },
+      {
+        title: "Motor de cobros",
+        description: "Motor para gestionar la operatoria de cobros.",
       },
       {
         title: "Alertas automatizadas",
-        description:
-          "Avisos generados automáticamente sobre vencimientos y estados de cada préstamo.",
+        description: "Alertas generadas automáticamente por el sistema.",
       },
       {
         title: "Reportería",
-        description: "Generación de reportes operativos con JasperReports.",
+        description: "Generación de reportes con JasperReports.",
       },
       {
         title: "Persistencia",
-        description:
-          "Modelo de datos gestionado con Hibernate sobre PostgreSQL.",
+        description: "Acceso a datos con Hibernate y PostgreSQL.",
       },
     ],
     result:
-      "Sistema integral actualmente en producción, operando la gestión de préstamos y cobros.",
-    tech: ["Java", "Spring", "Hibernate", "PostgreSQL", "JasperReports"],
-    isPrivate: true,
+      "Sistema integral actualmente en producción para la gestión operativa de préstamos y cobros.",
+    tech: ["Maven", "Java", "Spring", "Hibernate", "PostgreSQL", "JasperReports"],
   },
   {
     slug: "fotocabina-interactiva",
     title: "Sistema de Fotocabina Interactiva",
     category: "Software de escritorio · Java",
-    role: "Desarrollo integral (desktop + hardware)",
-    modality: "Freelance · Comercial",
-    client: "Confidencial",
+    role: "Desarrollo e integración de hardware",
+    modality: "Proyecto independiente · Comercial",
+    client: "No especificado",
     summary:
-      "Solución en producción para captura fotográfica en eventos, con integración de hardware externo y monitores duales.",
-    image: "/images/projects/fotocabina-interactiva.png",
+      "Solución en producción para captura fotográfica, con integración de cámaras e impresoras y gestión de monitores duales.",
+    image: fotocabinaImages.cover,
+    imageAlt: "Pieza visual del Sistema de Fotocabina Interactiva en funcionamiento",
+    gallery: [
+      { src: fotocabinaImages.gallery[0], alt: "Segunda pieza visual del Sistema de Fotocabina Interactiva" },
+      { src: fotocabinaImages.gallery[1], alt: "Menú principal del Sistema de Fotocabina Interactiva" },
+      { src: fotocabinaImages.gallery[2], alt: "Pantalla de cantidad de fotografías a tomar" },
+      { src: fotocabinaImages.gallery[3], alt: "Pantalla de selección de la fotocabina" },
+      { src: fotocabinaImages.gallery[4], alt: "Pantalla de selección de arte" },
+      { src: fotocabinaImages.gallery[5], alt: "Pantalla de selección de marco" },
+    ],
     context:
-      "Fotocabina para eventos que debía integrarse con hardware físico (cámaras, impresoras) y coordinar una experiencia sobre dos pantallas.",
+      "Solución para captura fotográfica con hardware externo y monitores duales.",
     problem:
-      "Captura fotográfica en eventos con integración de hardware externo (cámaras, impresoras) y monitores duales.",
+      "Integrar cámaras e impresoras y gestionar monitores duales dentro de una solución de fotocabina.",
     contribution:
-      "Desarrollé una solución en producción que integra el hardware de captura e impresión y gestiona monitores duales.",
+      "Desarrollé la solución en Java e integré cámaras, impresoras y la gestión de monitores duales mediante sarxos:webcam-capture.",
     architecture: [
       {
         title: "Integración de hardware",
-        description:
-          "Control de cámara vía webcam-capture (sarxos) e integración con impresoras.",
+        description: "Integración del sistema con cámaras e impresoras.",
       },
       {
         title: "Monitores duales",
-        description:
-          "Gestión de una pantalla para el operador y otra para el público.",
+        description: "Gestión de dos monitores dentro de la experiencia de captura.",
       },
       {
-        title: "Flujo de captura",
+        title: "Captura con Java",
         description:
-          "Orquestación del ciclo capturar → previsualizar → imprimir en el evento.",
+          "Captura fotográfica implementada en Java con sarxos:webcam-capture.",
       },
     ],
     result:
-      "Solución desplegada y utilizada en eventos, con integración de hardware de captura e impresión.",
+      "Solución de fotocabina actualmente en producción para captura fotográfica con hardware externo.",
     tech: ["Java", "sarxos:webcam-capture"],
-    isPrivate: true,
   },
   {
     slug: "saindex",
     title: "Plataforma SaIndex",
     category: "Aplicación web · C# MVC4",
-    role: "Diseño y desarrollo web",
-    modality: "Freelance · Comercial",
+    role: "Diseño del sistema web",
+    modality: "Proyecto independiente · Comercial",
     client: "Sector construcción",
     summary:
       "Sistema web transaccional para el control de perfiles, estadísticas y gestión documental de obras de construcción.",
-    image: "/images/projects/saindex.png",
+    image: saindexImages.cover,
+    imageAlt: "Menú principal de autor de la Plataforma SaIndex",
+    gallery: [
+      { src: saindexImages.gallery[0], alt: "Página de inicio de la Plataforma SaIndex" },
+      { src: saindexImages.gallery[1], alt: "Pantalla para cargar una obra en la Plataforma SaIndex" },
+      { src: saindexImages.gallery[2], alt: "Pantalla de información para la carga de una obra" },
+      { src: saindexImages.gallery[3], alt: "Pantalla de acceso a la Plataforma SaIndex" },
+    ],
     context:
-      "Empresa de construcción que necesitaba centralizar perfiles, estadísticas y documentación de obras en un sistema web transaccional.",
+      "Sistema web transaccional orientado a la gestión de obras de construcción.",
     problem:
-      "Control de perfiles, estadísticas y gestión documental de obras de construcción.",
+      "Controlar perfiles, estadísticas y documentación de obras de construcción.",
     contribution:
-      "Diseñé un sistema web transaccional para el control de perfiles, estadísticas y gestión documental.",
+      "Diseñé el sistema web transaccional con C# MVC4, SQL Server y Entity Framework.",
     architecture: [
       {
-        title: "Gestión documental",
-        description:
-          "Administración de la documentación de obras en un repositorio central.",
-      },
-      {
-        title: "Perfiles y permisos",
-        description: "Control de perfiles de acceso al sistema.",
+        title: "Control de perfiles",
+        description: "Gestión de perfiles dentro del sistema.",
       },
       {
         title: "Estadísticas",
-        description: "Visualización de métricas y estadísticas de las obras.",
+        description: "Consulta de estadísticas relacionadas con las obras.",
       },
       {
-        title: "Núcleo transaccional",
+        title: "Gestión documental",
+        description: "Administración de documentación de obras de construcción.",
+      },
+      {
+        title: "Sistema transaccional",
         description:
-          "Modelo transaccional sobre SQL Server con Entity Framework.",
+          "Implementación con C# MVC4, SQL Server y Entity Framework.",
       },
     ],
     result:
-      "Sistema web transaccional entregado para el control documental y estadístico de obras.",
+      "Sistema web transaccional diseñado para el control de perfiles, estadísticas y documentación de obras.",
     tech: ["C# MVC4", "SQL Server", "Entity Framework"],
-    isPrivate: true,
   },
 ];

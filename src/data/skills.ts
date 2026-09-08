@@ -31,16 +31,24 @@ export const skillGroups: SkillGroup[] = [
     ],
   },
   {
-    title: "Datos & ORM",
+    title: "Bases de Datos & Storage",
     items: [
       "SQL Server",
       "PostgreSQL (PostGIS)",
+      "SQLite",
       "MySQL",
       "MariaDB",
       "MongoDB",
       "Redis",
+    ],
+  },
+  {
+    title: "Acceso a Datos & ORM",
+    items: [
       "Entity Framework (EF Core)",
       "Dapper",
+      "NHibernate",
+      "ADO.NET",
     ],
   },
   {
@@ -54,5 +62,9 @@ export const skillGroups: SkillGroup[] = [
       "Git",
       "SSH Tunneling / VPN",
     ],
+  },
+  {
+    title: "Tecnologías Especializadas",
+    items: ["GIS Data Management", "WinForms", "WPF"],
   },
 ];

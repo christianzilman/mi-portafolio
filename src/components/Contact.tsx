@@ -18,9 +18,9 @@ export function Contact() {
       tone="dark"
       intro={
         <p className="text-lg leading-relaxed text-ink-muted text-pretty">
-          Estoy abierto a nuevos desafíos en backend, arquitectura de sistemas
-          distribuidos e integraciones. Si tu equipo necesita experiencia sólida
-          en .NET y cloud, escribime.
+          Mi experiencia se centra en backend, arquitectura de sistemas
+          distribuidos, integraciones, .NET y cloud. Para conversar sobre un
+          proyecto o una oportunidad profesional, escribime.
         </p>
       }
     >

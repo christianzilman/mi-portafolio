@@ -6,7 +6,7 @@ const meta = [
   { label: "Ubicación", value: profile.location },
   { label: "Experiencia", value: "+12 años" },
   { label: "Industrias", value: "FinTech · TravelTech" },
-  { label: "Modalidad", value: "Remoto · Freelance" },
+  { label: "Perfil", value: "Backend · Full Stack" },
 ];
 
 export function Hero() {

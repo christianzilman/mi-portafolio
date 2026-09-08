@@ -41,6 +41,11 @@ export interface ArchitectureBlock {
   description: string;
 }
 
+export interface ProjectImage {
+  src: string;
+  alt: string;
+}
+
 export interface ProjectCase {
   /** Identificador para la URL, ej. "multimedia-360" → #/proyecto/multimedia-360 */
   slug: string;
@@ -51,12 +56,15 @@ export interface ProjectCase {
   role: string;
   /** Modalidad (Freelance, Comercial, etc.). */
   modality: string;
-  /** Cliente o "Confidencial" para proyectos privados. */
+  /** Sector del cliente cuando está documentado en el CV. */
   client: string;
   /** Resumen corto para la tarjeta y el encabezado del caso. */
   summary: string;
-  /** Imagen conceptual dentro de /public. */
+  /** Captura principal importada desde src/assets. */
   image: string;
+  imageAlt: string;
+  /** Capturas adicionales del mismo sistema. */
+  gallery?: ProjectImage[];
   /** Contexto ampliado del proyecto. */
   context: string;
   /** Problema o desafío que resolvía el proyecto. */
@@ -68,8 +76,11 @@ export interface ProjectCase {
   /** Resultado o estado final del proyecto. */
   result: string;
   tech: string[];
-  /** true para proyectos privados/comerciales (sin repositorio). */
-  isPrivate: boolean;
   /** URL pública opcional; si está vacía no se muestra el botón. */
   siteUrl?: string;
+}
+
+export interface ProfileMetric {
+  value: string;
+  label: string;
 }

@@ -63,7 +63,7 @@ export const experience: ExperienceItem[] = [
     summary:
       "Desarrollo de soluciones e-commerce, sistemas de firma digital y proyectos de modernización para clientes internacionales y gubernamentales, bajo metodologías ágiles (Scrum).",
     highlights: [
-      "Desarrollé y mantuve soluciones e-commerce con integraciones de pasarelas de pago (Mercado Pago, NPS) mediante C#, MVC y Web Services (WCF).",
+      "Participé en el desarrollo, mantenimiento y evolución de soluciones e-commerce con integraciones de pasarelas de pago (Mercado Pago, NPS) mediante C#, MVC y Web Services (WCF).",
       "Refactoricé código y optimicé la arquitectura para un cliente en Francia, implementando procesos asíncronos y jobs diarios de indexado masivo de documentos con Apache Solr.",
       "Ejecuté análisis técnico, depuración y resolución de incidentes críticos sobre aplicativos de firma digital en producción.",
     ],

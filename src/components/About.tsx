@@ -1,6 +1,7 @@
+import type { ProfileMetric } from "@/data/types";
 import { Section } from "./Section";
 
-const facts = [
+const profileMetrics: ProfileMetric[] = [
   { value: "+12", label: "Años en desarrollo de software" },
   { value: ".NET / C#", label: "Especialidad principal" },
   { value: "FinTech · TravelTech", label: "Industrias de alta concurrencia" },
@@ -24,10 +25,11 @@ export function About() {
             Trabajé en profundidad en{" "}
             <span className="font-medium text-ink-foreground">FinTech</span>{" "}
             (streaming masivo de cotizaciones, operaciones bursátiles,
-            cumplimiento normativo) y{" "}
+            cumplimiento normativo) y en{" "}
             <span className="font-medium text-ink-foreground">TravelTech</span>{" "}
             (motores de reservas, conciliación financiera e integración con
-            proveedores globales), siempre sobre infraestructura cloud en AWS.
+            proveedores globales), con trabajo sobre infraestructura cloud en
+            AWS.
           </p>
           <p>
             Me interesa el diseño de sistemas mantenibles: arquitecturas
@@ -38,7 +40,7 @@ export function About() {
         </div>
 
         <ul className="grid grid-cols-2 gap-3 md:grid-cols-1">
-          {facts.map((fact) => (
+          {profileMetrics.map((fact) => (
             <li
               key={fact.label}
               className="rounded-xl border border-ink-border bg-ink-elevated p-5"
