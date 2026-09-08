@@ -2,14 +2,14 @@ import { christianZilmanCv } from "@/assets";
 import type { Profile, SocialLink } from "./types";
 
 export const profile: Profile = {
-  name: "Christian Julio Zilman",
-  role: "Senior Full Stack .NET Developer",
-  location: "Tucumán, Argentina",
+  name: "Christian Julio C. Zilman",
+  role: "Senior Full Stack .NET Software Engineer",
+  location: "San Miguel de Tucumán, Argentina",
   email: "christianzilman@gmail.com",
   phone: "381-6463461",
   cvFile: christianZilmanCv,
   summary:
-    "Ingeniero en Sistemas de Información con más de 12 años de experiencia en desarrollo de software, especializado en el ecosistema .NET / C#, con fuerte orientación Backend y experiencia Full Stack. Trabajo con arquitecturas de microservicios y sistemas distribuidos de alta concurrencia en los sectores FinTech y TravelTech, sobre infraestructura cloud (AWS) e integraciones con proveedores globales mediante APIs.",
+    "Ingeniero en Sistemas de Información con más de 12 años de experiencia en desarrollo de software. Me especializo en backend con .NET / C#, microservicios y sistemas distribuidos de alta concurrencia, con experiencia Full Stack en React e infraestructura cloud sobre AWS para los sectores FinTech y TravelTech.",
 };
 
 export const socials: SocialLink[] = [
@@ -23,11 +23,9 @@ export const socials: SocialLink[] = [
     href: "mailto:christianzilman@gmail.com",
     handle: "christianzilman@gmail.com",
   },
-  // PENDIENTE: el CV no incluye un perfil de GitHub.
-  // Completá el href y el handle cuando lo tengas; si queda vacío se muestra como "pendiente".
   {
     label: "GitHub",
-    href: "",
-    handle: "",
+    href: "https://github.com/christianzilman",
+    handle: "@christianzilman",
   },
 ];

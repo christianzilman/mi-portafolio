@@ -14,7 +14,7 @@ export interface Profile {
 
 export interface SocialLink {
   label: string;
-  /** Dejar la URL vacía ("") si todavía no la tenés: se marca como pendiente en la UI. */
+  /** URL pública del perfil o canal de contacto. */
   href: string;
   handle: string;
 }

@@ -1,75 +1,83 @@
-# React + TypeScript + Vite
+# Portafolio de Christian Julio C. Zilman
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Portafolio profesional de **Christian Julio C. Zilman**, Senior Full Stack .NET Software Engineer con foco en backend, microservicios, sistemas distribuidos, AWS y React.
 
-Currently, two official plugins are available:
+[Ver portafolio online](https://christianzilman.github.io/mi-portafolio/) · [LinkedIn](https://www.linkedin.com/in/christian-zilman-4187aa47) · [GitHub](https://github.com/christianzilman)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Contenido
 
-## React Compiler
+- Perfil profesional y datos de contacto.
+- Más de 12 años de experiencia en FinTech, TravelTech y desarrollo de software.
+- Stack técnico organizado por backend, frontend, bases de datos, cloud y DevOps.
+- Casos de proyectos con contexto, contribución, arquitectura, tecnologías y capturas.
+- CV descargable desde el sitio.
+- Diseño responsive y navegación por rutas compatible con GitHub Pages.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tecnologías
 
-## Expanding the ESLint configuration
+- React 19 y TypeScript.
+- Vite 8.
+- Tailwind CSS 4.
+- React Router.
+- Lucide React y React Icons.
+- ESLint.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Desarrollo local
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Requisitos: Node.js y npm.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```bash
+git clone https://github.com/christianzilman/mi-portafolio.git
+cd mi-portafolio
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+Vite mostrará en la terminal la URL local del servidor de desarrollo.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Comandos disponibles
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```bash
+npm run dev      # Inicia el entorno de desarrollo
+npm run build    # Valida TypeScript y genera la versión de producción
+npm run lint     # Ejecuta ESLint
+npm run preview  # Previsualiza localmente la versión de producción
 ```
+
+## Estructura principal
+
+```text
+src/
+├── assets/       # Imágenes, capturas y CV
+├── components/   # Secciones y componentes de interfaz
+├── data/         # Perfil, experiencia, habilidades y proyectos
+├── pages/        # Páginas del portafolio
+└── router/       # Rutas y loaders
+```
+
+Los datos profesionales están separados de la interfaz para facilitar su actualización:
+
+- `src/data/profile.ts`: perfil y enlaces de contacto.
+- `src/data/experience.ts`: experiencia laboral.
+- `src/data/skills.ts`: tecnologías y habilidades.
+- `src/data/projects.ts`: proyectos y casos de estudio.
+
+## Despliegue
+
+El proyecto está configurado con la ruta base `/mi-portafolio/` para su publicación en GitHub Pages. La compilación de producción se genera con:
+
+```bash
+npm run build
+```
+
+El resultado queda disponible en `dist/`.
+
+## Contacto
+
+- GitHub: [@christianzilman](https://github.com/christianzilman)
+- LinkedIn: [christian-zilman-4187aa47](https://www.linkedin.com/in/christian-zilman-4187aa47)
+- Email: [christianzilman@gmail.com](mailto:christianzilman@gmail.com)
+
+---
+
+Desarrollado por Christian Julio C. Zilman.

@@ -103,13 +103,7 @@ export function Contact() {
               />
             </a>
           </li>
-        ) : (
-          <li className="flex items-center gap-3 rounded-xl border border-dashed border-ink-border px-4 py-3.5 text-sm text-ink-muted">
-            <FaGithub className="size-5" aria-hidden="true" />
-            GitHub pendiente — agregá tu URL en{" "}
-            <code className="font-mono text-xs">src/data/profile.ts</code>
-          </li>
-        )}
+        ) : null}
       </ul>
     </Section>
   );
